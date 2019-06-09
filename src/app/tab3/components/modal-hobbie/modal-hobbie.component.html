@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-button (click)="closeModal()" slot="end" color="light">Cerrar</ion-button>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card class="welcome-card">
+        <ion-card-content>
+          <ion-card-header>
+            <ion-card-title>Hobbies</ion-card-title>
+          </ion-card-header>
+          
+          <ion-list>
+            <ion-card-subtitle *ngIf="isEmpty">No se han encontrado hobbies</ion-card-subtitle>
+            <div class="container-hobbie" *ngFor="let hobbie of hobbies">
+              <ion-card-title class="title-hobbie">{{hobbie.name}}</ion-card-title>
+              <ion-card-subtitle class="description-hobbie">{{hobbie.description}}</ion-card-subtitle>
+            </div>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-content>

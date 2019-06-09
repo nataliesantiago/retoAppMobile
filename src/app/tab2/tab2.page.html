@@ -6,4 +6,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Crear usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #formCreateUser="ngForm">
+          <ion-item>
+            <ion-label position="stacked">Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]='userName' name="userName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Apellido</ion-label>
+            <ion-input type="text" [(ngModel)]='userLastName' name="userLastName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Documento de identificación</ion-label>
+            <ion-input type="text" [(ngModel)]='documentId' name="documentId"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]='password' name="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Fecha de nacimiento</ion-label>
+            <ion-input type="date" [(ngModel)]='birthDay' name="birthDay"></ion-input>
+          </ion-item>
+          <ion-button (click)="create(); formCreateUser.reset()" expand="block">Guardar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="closeModal()" slot="end" color="light">Cerrar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Listado de Hobbies</ion-card-title>
+        </ion-card-header>
+        
+        <ion-list>
+          <div class="container-all-hobbies" *ngFor="let hobbie of allHobbies">
+            <div class="check-hobbie">
+              <ion-checkbox color="primary"></ion-checkbox>
+              <ion-card-title>{{hobbie.name}}</ion-card-title>
+            </div>
+            <ion-card-subtitle>{{hobbie.description}}</ion-card-subtitle>
+          </div>
+        </ion-list>
+        <ion-button slot="center" color="primary">Guardar</ion-button>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-content>

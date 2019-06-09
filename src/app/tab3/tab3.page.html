@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Listar Usuarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title>Buscar usuario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form #formCreateUser="ngForm">
+            <ion-item>
+              <ion-label position="stacked">Nombre</ion-label>
+              <ion-input type="text" [(ngModel)]='userName' name="userName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Apellido</ion-label>
+              <ion-input type="text" [(ngModel)]='userLastName' name="userLastName"></ion-input>
+            </ion-item>
+            <ion-button (click)="search()" expand="block">Buscar</ion-button>
+        </form>
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Lista de usuarios</ion-card-title>
+        </ion-card-header>
+
+        <ion-card *ngFor="let user of users">
+          <ion-card-content>
+            <ion-card-subtitle>Nombre y Apellido</ion-card-subtitle>
+            <ion-card-title class="space-bottom">{{user.firstName}} {{user.lastName}}</ion-card-title>
+            <ion-card-subtitle>Documento de identificación</ion-card-subtitle>
+            <ion-card-title class="space-bottom">{{user.documentId}}</ion-card-title>
+            <ion-card-subtitle>Fecha de nacimiento</ion-card-subtitle>
+            <ion-card-title class="space-bottom">{{user.birthDay | date: 'dd-MM-yyyy'}}</ion-card-title>
+            <ion-card-subtitle>Opciones</ion-card-subtitle>
+            <ion-button (click)="seeHobbies(user._id)" color="primary">Ver Hobbies</ion-button>
+            <ion-button (click)="selectHobbies()" color="success">Agregar Hobbies</ion-button>
+            <ion-button (click)="deleteUser(user._id)" color="danger">Eliminar Usuario</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-content>

@@ -1,0 +1,22 @@
+.container-hobbie{
+    .title-hobbie{
+        position: relative;
+        &:before{
+            position: absolute;
+            content: "";
+            background-color: #007bff;
+            font-weight: bold;
+            display: inline-block; 
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .title-hobbie,
+    .description-hobbie{
+        padding-left: 15px;
+    }
+}
