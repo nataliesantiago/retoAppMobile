@@ -2,6 +2,7 @@
 
 ## Instalación
 
+    $ npm install -g ionic
     $ git clone https://github.com/nataliesantiago/retoAppMobile.git
     $ cd retoAppMobile
     $ npm install
